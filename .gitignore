@@ -1,1 +1,4 @@
 all.py
+__pycache__
+.streamlit
+venv/
