@@ -28,3 +28,6 @@ def insertNewUser(user_id, user_pass):
     db = get_mongo_db()
     users_col = db['usuarios']
     users_col.insert_one({'username': user_id, 'password': user_pass})
+
+
+

@@ -3,6 +3,10 @@ import pandas as pd
 from mongo_utils import get_mongo_db
 from auth import loginPage
 from flask import session
+from autores import autApp
+from categorias import catApp
+from editoriales import editApp
+
 
 # Initialize Streamlit
 config = st.set_page_config(page_title='Biblioteca', layout='wide')
@@ -46,26 +50,19 @@ if loginPage() == True or 'usuario' in st.session_state:
         st.sidebar.empty()
         
         col1, col2, col3 = st.columns(3)
-        col1.button("Agregar una reseña")
-        col2.button("Agregar un libro")
-        col3.button("Reservar un libro")
-
-        # if st.button(f"Escribe tu reseña para el libro: {row['titulo']}"):
-        #     # Logic to handle making resena for the selected book
-        #     user_id = get_userByName(st.session_state['usuario'])
-        #     comentario = st.text_area(f"Comentario: {row['_id']}")
-
-        #     # Save the 'resena' and user information to the database
-        #     resenas_col = db['resenas']
-        #     resena_data = {
-        #         'book_id': row['_id'],
-        #         'user_id': user_id['_id'],
-        #         'content': comentario
-        #     }
-        #     resenas_col.insert_one(resena_data)
+    
+        if col1.button("Agregar una reseña"):
+            add_libros()
+        elif col2.button("Agregar un libro"):
+            pass
+        elif col3.button("Reservar un libro"):
+            pass
         pass
+
     elif selected_collection == 'autores':
-        # Add additional functionality for autores collection
-        pass
-    # Add functionality for other collections as needed
+        autApp()
+    elif selected_collection == 'categorias':
+        catApp()
+    elif selected_collection == 'editoriales':
+        editApp()
 
