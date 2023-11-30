@@ -47,18 +47,7 @@ if loginPage() == True or 'usuario' in st.session_state:
 
     # Additional functionality can be added based on the selected collection
     if selected_collection == 'libros':
-        st.sidebar.empty()
-        
-        col1, col2, col3 = st.columns(3)
-    
-        if col1.button("Agregar una reseña"):
-            add_libros()
-        elif col2.button("Agregar un libro"):
-            pass
-        elif col3.button("Reservar un libro"):
-            pass
         pass
-
     elif selected_collection == 'autores':
         autApp()
     elif selected_collection == 'categorias':
