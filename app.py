@@ -6,6 +6,7 @@ from flask import session
 from autores import autApp
 from categorias import catApp
 from editoriales import editApp
+from resenas import resenasApp
 
 
 # Initialize Streamlit
@@ -54,4 +55,6 @@ if loginPage() == True or 'usuario' in st.session_state:
         catApp()
     elif selected_collection == 'editoriales':
         editApp()
+    elif selected_collection == 'resenas':
+        resenasApp()
 
