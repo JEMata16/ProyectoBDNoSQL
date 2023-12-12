@@ -7,8 +7,9 @@ from autores import autApp
 from categorias import catApp
 from editoriales import editApp
 from resenas import resenasApp
-
-
+from prestamos import prestamosApp
+from reservas import reservasApp
+from libros import librosApp
 # Initialize Streamlit
 config = st.set_page_config(page_title='Biblioteca', layout='wide')
 
@@ -48,7 +49,7 @@ if loginPage() == True or 'usuario' in st.session_state:
 
     # Additional functionality can be added based on the selected collection
     if selected_collection == 'libros':
-        pass
+        librosApp()
     elif selected_collection == 'autores':
         autApp()
     elif selected_collection == 'categorias':
@@ -57,4 +58,9 @@ if loginPage() == True or 'usuario' in st.session_state:
         editApp()
     elif selected_collection == 'resenas':
         resenasApp()
+    elif selected_collection == 'prestamos':
+        prestamosApp()
+    elif selected_collection == 'reservas':
+        reservasApp()
+
 
